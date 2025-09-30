@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Donate - Incluvate</title>
+      <link rel="icon" type="image/png" href="./assets/images/logo/flogo.png" />
+      <meta charset="utf-8" />
+
+      <link
+         href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700"
+         rel="stylesheet"
+      />
+      <link
+         href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700"
+         rel="stylesheet"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+
+      <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+      <link rel="stylesheet" href="css/animate.css" />
+
+      <link rel="stylesheet" href="css/owl.carousel.min.css" />
+      <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+      <link rel="stylesheet" href="css/magnific-popup.css" />
+
+      <link rel="stylesheet" href="css/aos.css" />
+
+      <link rel="stylesheet" href="css/ionicons.min.css" />
+
+      <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+      <link rel="stylesheet" href="css/jquery.timepicker.css" />
+
+      <link rel="stylesheet" href="css/flaticon.css" />
+      <link rel="stylesheet" href="css/icomoon.css" />
+      <link rel="stylesheet" href="css/style.css" />
+
+      <style>
+         /* Custom styles for the donations page */
+         .donation-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+               url("images/bg_6.jpg");
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+         }
+
+         .donation-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+         }
+
+         .donation-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
+         }
+
+         .donation-card h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+         }
+
+         .amount-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+         }
+
+         .amount-option {
+            background: #f8f9fa;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #4a5568;
+            cursor: pointer;
+            transition: all 0.3s ease;
+         }
+
+         .amount-option:hover {
+            border-color: #2718ff;
+            background: #f0f4ff;
+         }
+
+         .amount-option.selected {
+            border-color: #2718ff;
+            background: #2718ff;
+            color: white;
+         }
+
+         .custom-amount {
+            margin-bottom: 30px;
+         }
+
+         .custom-amount label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #4a5568;
+         }
+
+         .custom-amount-input {
+            position: relative;
+         }
+
+         .currency-symbol {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 600;
+            color: #4a5568;
+         }
+
+         .custom-amount-input input {
+            width: 100%;
+            padding: 12px 15px 12px 35px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+         }
+
+         .custom-amount-input input:focus {
+            border-color: #2718ff;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(39, 24, 255, 0.1);
+         }
+
+         .razorpay-container {
+            text-align: center;
+            margin-top: 30px;
+         }
+
+         .razorpay-button {
+            background: #2718ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+         }
+
+         .razorpay-button:hover {
+            background: #1a0fb3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 24, 255, 0.3);
+         }
+
+         .secure-notice {
+            text-align: center;
+            margin-top: 15px;
+            color: #6b7280;
+            font-size: 0.9rem;
+         }
+
+         .impact-section {
+            padding: 80px 0;
+         }
+
+         .impact-story-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: transform 0.3s ease;
+         }
+
+         .impact-story-card:hover {
+            transform: translateY(-5px);
+         }
+
+         .quote-icon {
+            font-size: 2.5rem;
+            color: #e2e8f0;
+            margin-bottom: 15px;
+         }
+
+         .impact-story-card p {
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+         }
+
+         .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 20px;
+         }
+
+         .author-info {
+            text-align: right;
+            margin-right: 15px;
+         }
+
+         .author-info h4 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 5px;
+         }
+
+         .author-info p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin: 0;
+            font-style: normal;
+         }
+
+         .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e2e8f0;
+         }
+
+         .other-ways-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+         }
+
+         .way-to-give-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+         }
+
+         .way-to-give-card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+         }
+
+         .way-to-give-card h3 i {
+            color: #2718ff;
+         }
+
+         .bank-details {
+            margin-top: 20px;
+         }
+
+         .bank-details p {
+            margin-bottom: 8px;
+            color: #4a5568;
+         }
+
+         .bank-details strong {
+            color: #2c3e50;
+         }
+
+         .btn-secondary {
+            background: #2718ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+         }
+
+         .btn-secondary:hover {
+            background: #1a0fb3;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 24, 255, 0.3);
+         }
+
+         @media (max-width: 768px) {
+            .donation-hero {
+               padding: 60px 0;
+            }
+
+            .donation-section,
+            .impact-section,
+            .other-ways-section {
+               padding: 60px 0;
+            }
+
+            .amount-options {
+               grid-template-columns: repeat(2, 1fr);
+            }
+
+            .donation-card {
+               padding: 30px 20px;
+            }
+
+            .testimonial-author {
+               justify-content: flex-start;
+            }
+
+            .author-info {
+               text-align: left;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <nav
+         class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+         id="ftco-navbar"
+      >
+         <div class="container">
+            <a class="navbar-brand" href="index.html"
+               ><img
+                  src="assets/images/logo/final-logo.png"
+                  style="height: 50px"
+                  alt="Incluvate Logo"
+                  class="me-2"
+               />
+               Incluvate</a
+            >
+            <button
+               class="navbar-toggler"
+               type="button"
+               data-toggle="collapse"
+               data-target="#ftco-nav"
+               aria-controls="ftco-nav"
+               aria-expanded="false"
+               aria-label="Toggle navigation"
+            >
+               <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a href="index.html" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="about.html" class="nav-link">About</a>
+                  </li>
+                  <li class="nav-item active">
+                     <a href="donate.html" class="nav-link">Donate</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="gallery.html" class="nav-link">Gallery</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="contact.html" class="nav-link">Contact</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <!-- END nav -->
+
+      <!-- Hero Section -->
+      <div class="donation-hero">
+         <div class="container">
+            <div class="row align-items-center justify-content-center">
+               <div class="col-md-8 ftco-animate text-center">
+                  <h1 class="mb-4">Your Support Creates Opportunity</h1>
+                  <p class="mb-4">
+                     Every contribution, no matter the size, helps us build a
+                     more inclusive world and empower individuals with
+                     disabilities to achieve their dreams.
+                  </p>
+                  <a href="#donation-section" class="btn btn-primary btn-lg"
+                     >Make a Donation</a
+                  >
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Donation Section -->
+      <section id="donation-section" class="donation-section">
+         <div class="container">
+            <div class="donation-card ftco-animate">
+               <h2>Make a Donation</h2>
+
+               <!-- Donation Amount Options -->
+               <div class="amount-options">
+                  <div class="amount-option" data-amount="500">₹500</div>
+                  <div class="amount-option selected" data-amount="1000">
+                     ₹1,000
+                  </div>
+                  <div class="amount-option" data-amount="2500">₹2,500</div>
+                  <div class="amount-option" data-amount="custom">Custom</div>
+               </div>
+
+               <!-- Custom Amount Input -->
+               <div class="custom-amount">
+                  <label for="custom-amount-input">Enter Custom Amount</label>
+                  <div class="custom-amount-input">
+                     <span class="currency-symbol">₹</span>
+                     <input
+                        type="number"
+                        id="custom-amount-input"
+                        placeholder="Enter amount in rupees"
+                     />
+                  </div>
+               </div>
+
+               <!-- Razorpay Payment Button -->
+               <div class="razorpay-container">
+                  <form>
+                     <script
+                        src="https://checkout.razorpay.com/v1/payment-button.js"
+                        data-payment_button_id="pl_R7zorBpDTEhvSa"
+                        async
+                     ></script>
+                  </form>
+                  <p class="secure-notice">
+                     <i class="fas fa-lock"></i> Secure payment powered by
+                     Razorpay
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Impact Stories Section -->
+      <section class="impact-section">
+         <div class="container">
+            <div class="row justify-content-center mb-5">
+               <div class="col-md-8 text-center">
+                  <h2 class="mb-4">The Impact Created</h2>
+                  <p>
+                     These are the voices of those you support. Your donation
+                     writes the next chapter in their stories.
+                  </p>
+               </div>
+            </div>
+            <div class="row">
+               <!-- Story 1 -->
+               <div class="col-lg-6 mb-4 ftco-animate">
+                  <div class="impact-story-card">
+                     <i class="fas fa-quote-left quote-icon"></i>
+                     <p>
+                        "I literally got a job through Incluvate. It helped me a
+                        lot when nothing else worked."
+                     </p>
+                     <div class="testimonial-author">
+                        <div class="author-info">
+                           <h4>Mohseen</h4>
+                           <p>kreavate</p>
+                        </div>
+                        <img
+                           src="assets/images/wc/testimonial-1.png"
+                           alt="Mohseen"
+                           class="author-image"
+                        />
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Story 2 -->
+               <div class="col-lg-6 mb-4 ftco-animate">
+                  <div class="impact-story-card">
+                     <i class="fas fa-quote-left quote-icon"></i>
+                     <p>
+                        "I was looking for a job change, and Incluvate helped me
+                        get the right opportunity."
+                     </p>
+                     <div class="testimonial-author">
+                        <div class="author-info">
+                           <h4>Sankara Vara Prasad</h4>
+                           <p>kreavate</p>
+                        </div>
+                        <img
+                           src="assets/images/wc/testimonial-2.jpg"
+                           alt="Sankara Vara Prasad"
+                           class="author-image"
+                        />
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Story 3 -->
+               <div class="col-lg-6 mb-4 ftco-animate">
+                  <div class="impact-story-card">
+                     <i class="fas fa-quote-left quote-icon"></i>
+                     <p>
+                        "After losing a leg in a train accident, Incluvate
+                        helped rebuild confidence and livelihood."
+                     </p>
+                     <div class="testimonial-author">
+                        <div class="author-info">
+                           <h4>Deepak</h4>
+                           <p>Murugan Foods</p>
+                        </div>
+                        <img
+                           src="assets/images/wc/testimonials/Deepak.png"
+                           alt="Deepak"
+                           class="author-image"
+                        />
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Story 4 -->
+               <div class="col-lg-6 mb-4 ftco-animate">
+                  <div class="impact-story-card">
+                     <i class="fas fa-quote-left quote-icon"></i>
+                     <p>
+                        "I lost my fingers at 20 in an electric shock. With
+                        Incluvate's help, I found a job and now earn proudly."
+                     </p>
+                     <div class="testimonial-author">
+                        <div class="author-info">
+                           <h4>Nagesh</h4>
+                           <p>Murugan Foods</p>
+                        </div>
+                        <img
+                           src="assets/images/wc/testimonials/Nagesh.png"
+                           alt="Nagesh"
+                           class="author-image"
+                        />
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Other Ways to Donate Section -->
+      <section class="other-ways-section">
+         <div class="container">
+            <div class="row justify-content-center mb-5">
+               <div class="col-md-8 text-center">
+                  <h2 class="mb-4">Other Ways to Give</h2>
+                  <p>
+                     Your support comes in many forms. Here are other ways you
+                     can contribute to our mission.
+                  </p>
+               </div>
+            </div>
+            <div class="row">
+               <!-- Bank Transfer -->
+               <div class="col-lg-6 mb-4 ftco-animate">
+                  <div class="way-to-give-card">
+                     <h3>
+                        <i class="fas fa-university"></i> Direct Bank Transfer
+                     </h3>
+                     <p>
+                        You can donate directly to our bank account. Please
+                        mention "Donation" in the transfer description.
+                     </p>
+                     <div class="bank-details">
+                        <p>
+                           <strong>Account Name:</strong> Abled Fitness
+                           Foundation
+                        </p>
+                        <p><strong>Account Number:</strong> 123456789012</p>
+                        <p><strong>Bank Name:</strong> State Bank of India</p>
+                        <p><strong>IFSC Code:</strong> SBIN0001234</p>
+                        <p><strong>Branch:</strong> Ambad, Maharashtra</p>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Volunteer/In-Kind -->
+               <div class="col-lg-6 mb-4 ftco-animate">
+                  <div class="way-to-give-card">
+                     <h3>
+                        <i class="fas fa-hands-helping"></i> Volunteer or Donate
+                        In-Kind
+                     </h3>
+                     <p>
+                        Your time, skills, and resources are invaluable. We
+                        welcome volunteers for events, mentorship programs, and
+                        administrative support. We also accept in-kind donations
+                        like laptops, software, and office supplies.
+                     </p>
+                     <a href="contact.html" class="btn-secondary mt-3"
+                        >Contact Us to Get Involved</a
+                     >
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Footer -->
+      <footer
+         style="
+            background-color: #1f2937;
+            color: white;
+            padding: 48px 24px;
+            font-family: sans-serif;
+         "
+      >
+         <div style="max-width: 1200px; margin: 0 auto">
+            <div
+               style="
+                  display: grid;
+                  grid-template-columns: 1fr;
+                  gap: 32px;
+                  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+               "
+            >
+               <!-- About -->
+               <div>
+                  <a
+                     href="index.html"
+                     style="
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 16px;
+                        text-decoration: none;
+                        color: white;
+                     "
+                  >
+                     <img
+                        src="assets/images/logo/image.png"
+                        alt="Incluvate Logo"
+                        style="
+                           height: 40px;
+                           width: 40px;
+                           border-radius: 9999px;
+                           margin-right: 8px;
+                        "
+                     />
+                     <span style="font-size: 1.25rem; font-weight: bold"
+                        >Incluvate</span
+                     >
+                  </a>
+                  <p style="color: #9ca3af">
+                     Building a world where everyone has the opportunity to
+                     thrive. Join us in creating an inclusive future.
+                  </p>
+               </div>
+
+               <!-- Quick Links -->
+               <div>
+                  <h4
+                     style="
+                        font-size: 1.125rem;
+                        font-weight: 600;
+                        margin-bottom: 16px;
+                        color: #ffffff;
+                     "
+                  >
+                     Quick Links
+                  </h4>
+                  <ul
+                     style="
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        line-height: 2;
+                     "
+                  >
+                     <li>
+                        <a
+                           href="about.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >About Us</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="jobs.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >Job Board</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="explore.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >Explore Us</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="contact.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >Contact</a
+                        >
+                     </li>
+                  </ul>
+               </div>
+
+               <!-- Get Involved -->
+               <div>
+                  <h4
+                     style="
+                        font-size: 1.125rem;
+                        font-weight: 600;
+                        margin-bottom: 16px;
+                        color: #ffffff;
+                     "
+                  >
+                     Get Involved
+                  </h4>
+                  <ul
+                     style="
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        line-height: 2;
+                     "
+                  >
+                     <li>
+                        <a
+                           href="jobs.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >Volunteer</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="contact.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >Partner with Us</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="donate.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >Donate</a
+                        >
+                     </li>
+                  </ul>
+               </div>
+
+               <!-- Social Media -->
+               <div>
+                  <h4
+                     style="
+                        font-size: 1.125rem;
+                        font-weight: 600;
+                        margin-bottom: 16px;
+                        color: #ffffff;
+                     "
+                  >
+                     Follow Us
+                  </h4>
+                  <div style="display: flex; gap: 16px">
+                     <!-- Social Media Links -->
+                     <ul
+                        style="
+                           display: flex;
+                           gap: 16px;
+                           padding: 0;
+                           list-style: none;
+                        "
+                     >
+                        <li style="transition: transform 0.3s">
+                           <a
+                              href="https://twitter.com/yourprofile"
+                              target="_blank"
+                              style="text-decoration: none; color: #1da1f2"
+                           >
+                              <span
+                                 class="icon-twitter"
+                                 style="font-size: 20px"
+                              ></span>
+                           </a>
+                        </li>
+                        <li style="transition: transform 0.3s">
+                           <a
+                              href="https://facebook.com/yourprofile"
+                              target="_blank"
+                              style="text-decoration: none; color: #1877f2"
+                           >
+                              <span
+                                 class="icon-facebook"
+                                 style="font-size: 20px"
+                              ></span>
+                           </a>
+                        </li>
+                        <li style="transition: transform 0.3s">
+                           <a
+                              href="https://instagram.com/yourprofile"
+                              target="_blank"
+                              style="text-decoration: none; color: #e4405f"
+                           >
+                              <span
+                                 class="icon-instagram"
+                                 style="font-size: 20px"
+                              ></span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div
+               style="
+                  margin-top: 48px;
+                  border-top: 1px solid #374151;
+                  padding-top: 32px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  align-items: center;
+               "
+            >
+               <p style="color: #6b7280; font-size: 0.875rem; margin: 0">
+                  © <span id="year"></span> Incluvate by Abled Fitness
+                  Foundation. All Rights Reserved.
+               </p>
+               <script>
+                  document.getElementById("year").textContent =
+                     new Date().getFullYear();
+               </script>
+               <div style="display: flex; gap: 16px; margin-top: 16px">
+                  <a
+                     href="#"
+                     style="
+                        color: #6b7280;
+                        font-size: 0.875rem;
+                        text-decoration: none;
+                     "
+                     onmouseover="this.style.color='white'"
+                     onmouseout="this.style.color='#6b7280'"
+                     >Privacy Policy</a
+                  >
+                  <a
+                     href="#"
+                     style="
+                        color: #6b7280;
+                        font-size: 0.875rem;
+                        text-decoration: none;
+                     "
+                     onmouseover="this.style.color='white'"
+                     onmouseout="this.style.color='#6b7280'"
+                     >Terms of Service</a
+                  >
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <!-- loader -->
+      <div id="ftco-loader" class="show fullscreen">
+         <svg class="circular" width="48px" height="48px">
+            <circle
+               class="path-bg"
+               cx="24"
+               cy="24"
+               r="22"
+               fill="none"
+               stroke-width="4"
+               stroke="#eeeeee"
+            />
+            <circle
+               class="path"
+               cx="24"
+               cy="24"
+               r="22"
+               fill="none"
+               stroke-width="4"
+               stroke-miterlimit="10"
+               stroke="#F96D00"
+            />
+         </svg>
+      </div>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery-migrate-3.0.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.easing.1.3.js"></script>
+      <script src="js/jquery.waypoints.min.js"></script>
+      <script src="js/jquery.stellar.min.js"></script>
+      <script src="js/owl.carousel.min.js"></script>
+      <script src="js/jquery.magnific-popup.min.js"></script>
+      <script src="js/aos.js"></script>
+      <script src="js/jquery.animateNumber.min.js"></script>
+      <script src="js/bootstrap-datepicker.js"></script>
+      <script src="js/jquery.timepicker.min.js"></script>
+      <script src="js/scrollax.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+      <script src="js/google-map.js"></script>
+      <script src="js/main.js"></script>
+
+      <script>
+         $(document).ready(function () {
+            // Amount selection functionality
+            $(".amount-option").click(function () {
+               $(".amount-option").removeClass("selected");
+               $(this).addClass("selected");
+
+               if ($(this).data("amount") === "custom") {
+                  $("#custom-amount-input").focus();
+               } else {
+                  $("#custom-amount-input").val($(this).data("amount"));
+               }
+            });
+
+            // Custom amount input handling
+            $("#custom-amount-input").on("input", function () {
+               if ($(this).val() !== "") {
+                  $(".amount-option").removeClass("selected");
+                  $('.amount-option[data-amount="custom"]').addClass(
+                     "selected",
+                  );
+               }
+            });
+
+            // Set default amount
+            $("#custom-amount-input").val("1000");
+         });
+      </script>
+   </body>
+</html>

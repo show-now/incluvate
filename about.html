@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>About Us - Incluvate</title>
+      <link rel="icon" type="image/png" href="./assets/images/logo/flogo.png" />
+
+      <link
+         href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700"
+         rel="stylesheet"
+      />
+      <link
+         href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700"
+         rel="stylesheet"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+
+      <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+      <link rel="stylesheet" href="css/animate.css" />
+
+      <link rel="stylesheet" href="css/owl.carousel.min.css" />
+      <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+      <link rel="stylesheet" href="css/magnific-popup.css" />
+
+      <link rel="stylesheet" href="css/aos.css" />
+
+      <link rel="stylesheet" href="css/ionicons.min.css" />
+
+      <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+      <link rel="stylesheet" href="css/jquery.timepicker.css" />
+
+      <link rel="stylesheet" href="css/flaticon.css" />
+      <link rel="stylesheet" href="css/icomoon.css" />
+      <link rel="stylesheet" href="css/style.css" />
+
+      <style>
+         /* Custom styles for the redesigned About page */
+         .mission-vision-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+         }
+
+         .mission-card,
+         .vision-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: transform 0.3s ease;
+         }
+
+         .mission-card:hover,
+         .vision-card:hover {
+            transform: translateY(-5px);
+         }
+
+         .mission-icon,
+         .vision-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+         }
+
+         .mission-card h3,
+         .vision-card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+         }
+
+         .mission-card p,
+         .vision-card p {
+            color: #6c757d;
+            line-height: 1.7;
+         }
+
+         .impact-section {
+            background-color: #2718ff;
+            color: white;
+            padding: 80px 0;
+         }
+
+         .impact-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+         }
+
+         .impact-text {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+         }
+
+         .partners-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+         }
+
+         .partner-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            height: 100%;
+            transition: transform 0.3s ease;
+         }
+
+         .partner-card:hover {
+            transform: translateY(-5px);
+         }
+
+         .partner-logo {
+            margin-bottom: 20px;
+         }
+
+         .partner-card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+         }
+
+         .partner-card p {
+            color: #6c757d;
+            line-height: 1.6;
+         }
+
+         .carousel-controls {
+            text-align: center;
+            margin-top: 30px;
+         }
+
+         .carousel-btn {
+            background: #2718ff;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+         }
+
+         .carousel-btn:hover {
+            background: #1a0fb3;
+         }
+
+         .story-section {
+            padding: 80px 0;
+         }
+
+         .story-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+         }
+
+         .story-content h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: 600;
+         }
+
+         .story-content p {
+            color: #6c757d;
+            line-height: 1.8;
+            margin-bottom: 20px;
+         }
+
+         .values-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+         }
+
+         .value-item {
+            text-align: center;
+            padding: 30px 20px;
+         }
+
+         .value-icon {
+            font-size: 2.5rem;
+            color: #2718ff;
+            margin-bottom: 20px;
+         }
+
+         .value-item h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+         }
+
+         .value-item p {
+            color: #6c757d;
+            line-height: 1.6;
+         }
+      </style>
+   </head>
+   <body>
+      <nav
+         class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+         id="ftco-navbar"
+      >
+         <div class="container">
+            <a class="navbar-brand" href="index.html"
+               ><img
+                  src="assets/images/logo/final-logo.png"
+                  style="height: 50px"
+                  alt="Incluvate Logo"
+                  class="me-2"
+               />
+               Incluvate</a
+            >
+            <button
+               class="navbar-toggler"
+               type="button"
+               data-toggle="collapse"
+               data-target="#ftco-nav"
+               aria-controls="ftco-nav"
+               aria-expanded="false"
+               aria-label="Toggle navigation"
+            >
+               <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a href="index.html" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item active">
+                     <a href="about.html" class="nav-link">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="donate.html" class="nav-link">Donate</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="gallery.html" class="nav-link">Gallery</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="contact.html" class="nav-link">Contact</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <!-- END nav -->
+      <!-- Our Story Section -->
+      <section class="story-section">
+         <div class="container">
+            <div class="row d-flex align-items-center">
+               <div class="col-md-6 d-flex ftco-animate">
+                  <div class="story-image">
+                     <img
+                        src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
+                        alt="Incluvate team"
+                        style="width: 100%; height: auto"
+                     />
+                  </div>
+               </div>
+               <div class="col-md-6 pl-md-5 ftco-animate story-content">
+                  <h2 class="mb-4">Our Story: Innovation Meets Inclusion</h2>
+                  <p>
+                     Incluvate was founded on a simple belief: dignity is not
+                     optional — it's foundational. We set out to create a space
+                     where people with disabilities are not overlooked or
+                     underestimated, but recognized for their skills, ambition,
+                     and potential.
+                  </p>
+                  <p>
+                     What began as a small initiative grew from a shared
+                     frustration — talented individuals searching for real
+                     opportunities, and employers wanting to be inclusive but
+                     unsure how. We saw the gap, and we chose to bridge it.
+                  </p>
+                  <p>
+                     At Incluvate, we create a safe space where disability is
+                     part of human diversity, not a limitation. We connect
+                     people to real opportunities — from jobs and education to
+                     resources and support — while also challenging stigma
+                     through stories, dialogue, and global learning.
+                  </p>
+                  <p>
+                     Our journey is just beginning, but our resolve is absolute.
+                     Every day, we work towards a world where ability is
+                     celebrated in all its forms, and where everyone has the
+                     tools and opportunities to thrive.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Mission & Vision Section -->
+      <section class="mission-vision-section">
+         <div class="container">
+            <div class="row justify-content-center mb-5">
+               <div class="col-md-8 text-center">
+                  <h2 class="mb-4">Our Purpose</h2>
+                  <p>
+                     We are driven by a clear mission and guided by an inspiring
+                     vision for a more inclusive world.
+                  </p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6 mb-4 ftco-animate">
+                  <div class="mission-card">
+                     <i
+                        class="fas fa-bullseye mission-icon"
+                        style="color: #2718ff"
+                     ></i>
+                     <h3>Our Mission</h3>
+                     <p>
+                        Our mission is to break barriers and create equal
+                        employment opportunities for people of all abilities.
+                        Incluvate empowers individuals through skill-building,
+                        job placement, and partnerships with inclusive
+                        employers, ensuring dignity, independence, and
+                        sustainable livelihoods.
+                     </p>
+                     <p>
+                        We work directly with corporations to develop inclusive
+                        hiring practices, provide disability awareness training,
+                        and create accessible workplace environments that
+                        benefit everyone.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-md-6 mb-4 ftco-animate">
+                  <div class="vision-card">
+                     <i
+                        class="fas fa-eye vision-icon"
+                        style="color: #2718ff"
+                     ></i>
+                     <h3>Our Vision</h3>
+                     <p>
+                        We envision a world where every person, regardless of
+                        ability, has access to meaningful work and the chance to
+                        thrive. Incluvate strives to be a catalyst for inclusive
+                        hiring, social equity, and lasting economic impact,
+                        supported by a compassionate global community.
+                     </p>
+                     <p>
+                        Our vision extends beyond employment to creating
+                        inclusive communities where people of all abilities can
+                        participate fully in social, economic, and cultural life
+                        without barriers or discrimination.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Our Values Section -->
+      <section class="values-section">
+         <div class="container">
+            <div class="row justify-content-center mb-5">
+               <div class="col-md-8 text-center">
+                  <h2 class="mb-4">Our Values</h2>
+                  <p>
+                     These core principles guide everything we do at Incluvate
+                  </p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4 mb-4 ftco-animate">
+                  <div class="value-item">
+                     <i class="fas fa-users value-icon"></i>
+                     <h4>Inclusion</h4>
+                     <p>
+                        We believe in creating spaces where everyone feels
+                        valued, respected, and has a sense of belonging
+                        regardless of ability.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-md-4 mb-4 ftco-animate">
+                  <div class="value-item">
+                     <i class="fas fa-handshake value-icon"></i>
+                     <h4>Collaboration</h4>
+                     <p>
+                        We work together with individuals, communities, and
+                        organizations to create sustainable change and shared
+                        success.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-md-4 mb-4 ftco-animate">
+                  <div class="value-item">
+                     <i class="fas fa-rocket value-icon"></i>
+                     <h4>Innovation</h4>
+                     <p>
+                        We continuously seek new approaches and creative
+                        solutions to break down barriers and build more
+                        inclusive systems.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Impact Section -->
+      <section class="impact-section">
+         <div class="container">
+            <div class="row justify-content-center text-center">
+               <div class="col-md-3 mb-4 ftco-animate">
+                  <div class="impact-number">50+</div>
+                  <p class="impact-text">Wheelchairs Donated</p>
+               </div>
+               <div class="col-md-3 mb-4 ftco-animate">
+                  <div class="impact-number">10+</div>
+                  <p class="impact-text">Individuals Empowered</p>
+               </div>
+               <div class="col-md-3 mb-4 ftco-animate">
+                  <div class="impact-number">2+</div>
+                  <p class="impact-text">Corporate Partners</p>
+               </div>
+               <div class="col-md-3 mb-4 ftco-animate">
+                  <div class="impact-number">3+</div>
+                  <p class="impact-text">Communities Reached</p>
+               </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+               <div class="col-md-6 text-center">
+                  <p>
+                     Every contribution, no matter the size, helps us build a
+                     more inclusive world.
+                  </p>
+                  <a href="donate.html" class="btn btn-light px-4 py-2 mt-2"
+                     >Support Our Mission</a
+                  >
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Partners Section with Carousel -->
+      <section class="partners-section">
+         <div class="container">
+            <div class="row justify-content-center mb-5">
+               <div class="col-md-8 text-center">
+                  <h2 class="mb-4">Our Partners & Recognition</h2>
+                  <p>
+                     We are proud to collaborate with and be recognized by
+                     leading organizations committed to inclusion.
+                  </p>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-12">
+                  <div class="owl-carousel partner-carousel ftco-animate">
+                     <!-- Partner 1 -->
+                     <div class="item">
+                        <div class="partner-card">
+                           <img
+                              src="assets/images/logo/enil-logo.png"
+                              alt="ENIL Logo"
+                              class="partner-logo"
+                           />
+                           <h4>Recognized by ENIL</h4>
+                           <p>
+                              Our commitment to independent living and
+                              disability rights is recognized by the European
+                              Network on Independent Living.
+                           </p>
+                        </div>
+                     </div>
+
+                     <!-- Partner 2 -->
+                     <div class="item">
+                        <div class="partner-card">
+                           <img
+                              src="assets/images/partners/kreavate.png"
+                              alt="Partner Logo"
+                              class="partner-logo"
+                           />
+                           <h4>Corporate Partners</h4>
+                           <p>
+                              We work with forward-thinking companies to create
+                              inclusive hiring pipelines and workplace
+                              environments.
+                           </p>
+                        </div>
+                     </div>
+
+                     <!-- Partner 3 -->
+                     <div class="item">
+                        <div class="partner-card">
+                           <img
+                              src="assets/images/partners/murugan-foods.png"
+                              alt="Murugan Foods Logo"
+                              class="partner-logo"
+                           />
+                           <h4>Corporate Partners</h4>
+                           <p>
+                              We work with forward-thinking companies to create
+                              inclusive hiring pipelines and workplace
+                              environments.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Carousel Controls -->
+                  <div class="carousel-controls">
+                     <button class="carousel-btn prev-slide">
+                        <i class="fas fa-chevron-left"></i>
+                     </button>
+                     <button class="carousel-btn next-slide">
+                        <i class="fas fa-chevron-right"></i>
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Footer -->
+      <footer
+         style="
+            background-color: #1f2937;
+            color: white;
+            padding: 48px 24px;
+            font-family: sans-serif;
+         "
+      >
+         <div style="max-width: 1200px; margin: 0 auto">
+            <div
+               style="
+                  display: grid;
+                  grid-template-columns: 1fr;
+                  gap: 32px;
+                  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+               "
+            >
+               <!-- About -->
+               <div>
+                  <a
+                     href="index.html"
+                     style="
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 16px;
+                        text-decoration: none;
+                        color: white;
+                     "
+                  >
+                     <img
+                        src="assets/images/logo/image.png"
+                        alt="Incluvate Logo"
+                        style="
+                           height: 40px;
+                           width: 40px;
+                           border-radius: 9999px;
+                           margin-right: 8px;
+                        "
+                     />
+                     <span style="font-size: 1.25rem; font-weight: bold"
+                        >Incluvate</span
+                     >
+                  </a>
+                  <p style="color: #9ca3af">
+                     Building a world where everyone has the opportunity to
+                     thrive. Join us in creating an inclusive future.
+                  </p>
+               </div>
+
+               <!-- Quick Links -->
+               <div>
+                  <h4
+                     style="
+                        font-size: 1.125rem;
+                        font-weight: 600;
+                        margin-bottom: 16px;
+                        color: #ffffff;
+                     "
+                  >
+                     Quick Links
+                  </h4>
+                  <ul
+                     style="
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        line-height: 2;
+                     "
+                  >
+                     <li>
+                        <a
+                           href="about.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >About Us</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="jobs.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >Job Board</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="explore.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >Explore Us</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="contact.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >Contact</a
+                        >
+                     </li>
+                  </ul>
+               </div>
+
+               <!-- Get Involved -->
+               <div>
+                  <h4
+                     style="
+                        font-size: 1.125rem;
+                        font-weight: 600;
+                        margin-bottom: 16px;
+                        color: #ffffff;
+                     "
+                  >
+                     Get Involved
+                  </h4>
+                  <ul
+                     style="
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        line-height: 2;
+                     "
+                  >
+                     <li>
+                        <a
+                           href="jobs.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >Volunteer</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="contact.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >Partner with Us</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="donate.html"
+                           style="color: #9ca3af; text-decoration: none"
+                           onmouseover="this.style.color='white'"
+                           onmouseout="this.style.color='#9ca3af'"
+                           >Donate</a
+                        >
+                     </li>
+                  </ul>
+               </div>
+
+               <!-- Social Media -->
+               <div>
+                  <h4
+                     style="
+                        font-size: 1.125rem;
+                        font-weight: 600;
+                        margin-bottom: 16px;
+                        color: #ffffff;
+                     "
+                  >
+                     Follow Us
+                  </h4>
+                  <div style="display: flex; gap: 16px">
+                     <!-- Social Media Links -->
+                     <ul
+                        style="
+                           display: flex;
+                           gap: 16px;
+                           padding: 0;
+                           list-style: none;
+                        "
+                     >
+                        <li style="transition: transform 0.3s">
+                           <a
+                              href="https://twitter.com/yourprofile"
+                              target="_blank"
+                              style="text-decoration: none; color: #1da1f2"
+                           >
+                              <span
+                                 class="icon-twitter"
+                                 style="font-size: 20px"
+                              ></span>
+                           </a>
+                        </li>
+                        <li style="transition: transform 0.3s">
+                           <a
+                              href="https://facebook.com/yourprofile"
+                              target="_blank"
+                              style="text-decoration: none; color: #1877f2"
+                           >
+                              <span
+                                 class="icon-facebook"
+                                 style="font-size: 20px"
+                              ></span>
+                           </a>
+                        </li>
+                        <li style="transition: transform 0.3s">
+                           <a
+                              href="https://instagram.com/yourprofile"
+                              target="_blank"
+                              style="text-decoration: none; color: #e4405f"
+                           >
+                              <span
+                                 class="icon-instagram"
+                                 style="font-size: 20px"
+                              ></span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div
+               style="
+                  margin-top: 48px;
+                  border-top: 1px solid #374151;
+                  padding-top: 32px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  align-items: center;
+               "
+            >
+               <p style="color: #6b7280; font-size: 0.875rem; margin: 0">
+                  © <span id="year"></span> Incluvate by Abled Fitness
+                  Foundation. All Rights Reserved.
+               </p>
+               <script>
+                  document.getElementById("year").textContent =
+                     new Date().getFullYear();
+               </script>
+               <div style="display: flex; gap: 16px; margin-top: 16px">
+                  <a
+                     href="#"
+                     style="
+                        color: #6b7280;
+                        font-size: 0.875rem;
+                        text-decoration: none;
+                     "
+                     onmouseover="this.style.color='white'"
+                     onmouseout="this.style.color='#6b7280'"
+                     >Privacy Policy</a
+                  >
+                  <a
+                     href="#"
+                     style="
+                        color: #6b7280;
+                        font-size: 0.875rem;
+                        text-decoration: none;
+                     "
+                     onmouseover="this.style.color='white'"
+                     onmouseout="this.style.color='#6b7280'"
+                     >Terms of Service</a
+                  >
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <!-- loader -->
+      <div id="ftco-loader" class="show fullscreen">
+         <svg class="circular" width="48px" height="48px">
+            <circle
+               class="path-bg"
+               cx="24"
+               cy="24"
+               r="22"
+               fill="none"
+               stroke-width="4"
+               stroke="#eeeeee"
+            />
+            <circle
+               class="path"
+               cx="24"
+               cy="24"
+               r="22"
+               fill="none"
+               stroke-width="4"
+               stroke-miterlimit="10"
+               stroke="#F96D00"
+            />
+         </svg>
+      </div>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery-migrate-3.0.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.easing.1.3.js"></script>
+      <script src="js/jquery.waypoints.min.js"></script>
+      <script src="js/jquery.stellar.min.js"></script>
+      <script src="js/owl.carousel.min.js"></script>
+      <script src="js/jquery.magnific-popup.min.js"></script>
+      <script src="js/aos.js"></script>
+      <script src="js/jquery.animateNumber.min.js"></script>
+      <script src="js/bootstrap-datepicker.js"></script>
+      <script src="js/jquery.timepicker.min.js"></script>
+      <script src="js/scrollax.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+      <script src="js/google-map.js"></script>
+      <script src="js/main.js"></script>
+
+      <script>
+         $(document).ready(function () {
+            // Initialize partner carousel
+            $(".partner-carousel").owlCarousel({
+               loop: true,
+               autoplay: true,
+               autoplayTimeout: 5000,
+               autoplayHoverPause: true,
+               margin: 30,
+               nav: false,
+               dots: false,
+               responsive: {
+                  0: {
+                     items: 1,
+                  },
+                  768: {
+                     items: 2,
+                  },
+                  992: {
+                     items: 3,
+                  },
+               },
+            });
+
+            // Custom navigation for partner carousel
+            $(".next-slide").click(function () {
+               $(".partner-carousel").trigger("next.owl.carousel");
+            });
+
+            $(".prev-slide").click(function () {
+               $(".partner-carousel").trigger("prev.owl.carousel");
+            });
+         });
+      </script>
+   </body>
+</html>
