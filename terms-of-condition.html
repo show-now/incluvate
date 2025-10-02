@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Contact Us - Incluvate</title>
-      <meta charset="utf-8" />
-      <meta
-         name="viewport"
-         content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Terms and Conditions - Incluvate</title>
+      <link rel="icon" type="image/png" href="./assets/images/logo/flogo.png" />
 
       <link
          href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700"
@@ -40,149 +38,120 @@
       <link rel="stylesheet" href="css/style.css" />
 
       <style>
-         /* Custom styles for the contact page */
-         .contact-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-               url("images/bg_7.jpg");
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0;
+         /* Custom styles for the Terms and Conditions page */
+         .terms-hero {
+            background-color: #2718ff;
             color: white;
+            padding: 100px 0 60px;
             text-align: center;
          }
-
-         .contact-info-section {
+         
+         .terms-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+         }
+         
+         .terms-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+         }
+         
+         .terms-content {
             padding: 80px 0;
             background-color: #f8f9fa;
          }
-
-         .contact-card {
+         
+         .terms-section {
             background: white;
             border-radius: 10px;
-            padding: 40px 30px;
+            padding: 40px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            height: 100%;
-            transition: transform 0.3s ease;
+            margin-bottom: 30px;
          }
-
-         .contact-card:hover {
-            transform: translateY(-5px);
+         
+         .terms-section h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            font-weight: 600;
          }
-
-         .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: block;
+         
+         .terms-section h3 {
             color: #2718ff;
-         }
-
-         .contact-card h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
+            margin: 25px 0 15px;
             font-weight: 600;
          }
-
-         .contact-card p {
+         
+         .terms-section p, .terms-section li {
             color: #6c757d;
-            line-height: 1.6;
+            line-height: 1.7;
+            margin-bottom: 15px;
          }
-
-         .contact-form-section {
-            padding: 80px 0;
+         
+         .terms-section ul {
+            padding-left: 20px;
          }
-
-         .form-container {
-            background: white;
+         
+         .terms-section li {
+            margin-bottom: 10px;
+         }
+         
+         .highlight-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #2718ff;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+         }
+         
+         .warning-box {
+            background-color: #fff3f3;
+            border-left: 4px solid #ff4757;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+         }
+         
+         .contact-info {
+            background-color: #2718ff;
+            color: white;
+            padding: 30px;
             border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 30px;
          }
-
-         .form-container h2 {
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-weight: 600;
-         }
-
-         .form-group {
+         
+         .contact-info h3 {
+            color: white;
             margin-bottom: 20px;
          }
-
-         .form-control {
-            border-radius: 8px;
-            padding: 12px 15px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
+         
+         .contact-info p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 10px;
          }
-
-         .form-control:focus {
-            border-color: #2718ff;
-            box-shadow: 0 0 0 2px rgba(39, 24, 255, 0.1);
-         }
-
-         .btn-primary {
-            background-color: #2718ff;
-            border-color: #2718ff;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-         }
-
-         .btn-primary:hover {
-            background-color: #1a0fb3;
-            border-color: #1a0fb3;
-            transform: translateY(-2px);
-         }
-
-         .map-section {
-            padding: 0 0 80px 0;
-         }
-
-         .map-card {
-            background: white;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-         }
-
-         .map-card h2 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-weight: 600;
-         }
-
-         .map-card p {
+         
+         .last-updated {
+            text-align: center;
             color: #6c757d;
-            margin-bottom: 30px;
+            font-style: italic;
+            margin-top: 40px;
          }
-
-         .map-container {
-            border-radius: 8px;
-            overflow: hidden;
-            height: 400px;
-         }
-
-         .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-         }
-
-         @media (max-width: 768px) {
-            .contact-hero {
-               padding: 60px 0;
-            }
-
-            .contact-info-section,
-            .contact-form-section {
-               padding: 60px 0;
-            }
-
-            .form-container {
-               padding: 30px 20px;
-            }
+         
+         .section-number {
+            display: inline-block;
+            background-color: #2718ff;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            font-weight: bold;
          }
       </style>
    </head>
@@ -227,7 +196,7 @@
                   <li class="nav-item">
                      <a href="gallery.html" class="nav-link">Gallery</a>
                   </li>
-                  <li class="nav-item active">
+                  <li class="nav-item">
                      <a href="contact.html" class="nav-link">Contact</a>
                   </li>
                </ul>
@@ -236,171 +205,142 @@
       </nav>
       <!-- END nav -->
 
-      <!-- Hero Section -->
-      <div class="contact-hero">
+      <!-- Terms and Conditions Hero Section -->
+      <section class="terms-hero">
          <div class="container">
-            <div class="row align-items-center justify-content-center">
-               <div class="col-md-8 ftco-animate text-center">
-                  <h1 class="mb-4" style="color: #ffffff">Get In Touch</h1>
-                  <p class="mb-0">
-                     We'd love to hear from you. Send us a message and we'll
-                     respond as soon as possible.
-                  </p>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <!-- Contact Information Section -->
-      <section class="contact-info-section">
-         <div class="container">
-            <div class="row justify-content-center mb-5">
-               <div class="col-md-8 text-center">
-                  <h2 class="mb-4">Contact Information</h2>
-                  <p>
-                     Feel free to reach out to us through any of the following
-                     channels
-                  </p>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-4 mb-4 ftco-animate">
-                  <div class="contact-card">
-                     <i class="fas fa-map-marker-alt contact-icon"></i>
-                     <h3>Our Address</h3>
-                     <p>12-8-160 Mettuguda, Secunderabad, Hyderabad - 500017</p>
-                  </div>
-               </div>
-               <div class="col-md-4 mb-4 ftco-animate">
-                  <div class="contact-card">
-                     <i class="fas fa-envelope contact-icon"></i>
-                     <h3>Email Us</h3>
-                     <p>
-                        <a href="mailto:abledfitnessfoundation@gmail.com"
-                           >abledfitnessfoundation@gmail.com</a
-                        >
-                     </p>
-                  </div>
-               </div>
-               <div class="col-md-4 mb-4 ftco-animate">
-                  <div class="contact-card">
-                     <i class="fas fa-phone-alt contact-icon"></i>
-                     <h3>Call Us</h3>
-                     <p><a href="tel:+918686043733">+91 8686043733</a></p>
-                  </div>
-               </div>
-            </div>
+            <h1>Terms and Conditions</h1>
+            <p>Please read these terms carefully before using our website or services.</p>
          </div>
       </section>
 
-      <!-- Contact Form Section -->
-      <section class="contact-form-section">
+      <!-- Terms and Conditions Content -->
+      <section class="terms-content">
          <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-lg-10">
-                  <div class="form-container ftco-animate">
-                     <h2 class="text-center mb-5">Send Us a Message</h2>
-                     <form action="#" method="POST">
-                        <div class="row">
-                           <div class="col-md-6">
-                              <div class="form-group">
-                                 <label for="first-name" class="form-label"
-                                    >First Name</label
-                                 >
-                                 <input
-                                    type="text"
-                                    class="form-control"
-                                    id="first-name"
-                                    placeholder="Your first name"
-                                    required
-                                 />
-                              </div>
-                           </div>
-                           <div class="col-md-6">
-                              <div class="form-group">
-                                 <label for="last-name" class="form-label"
-                                    >Last Name</label
-                                 >
-                                 <input
-                                    type="text"
-                                    class="form-control"
-                                    id="last-name"
-                                    placeholder="Your last name"
-                                    required
-                                 />
-                              </div>
-                           </div>
-                        </div>
-                        <div class="form-group">
-                           <label for="email" class="form-label"
-                              >Email Address</label
-                           >
-                           <input
-                              type="email"
-                              class="form-control"
-                              id="email"
-                              placeholder="Your email address"
-                              required
-                           />
-                        </div>
-                        <div class="form-group">
-                           <label for="subject" class="form-label"
-                              >Subject</label
-                           >
-                           <input
-                              type="text"
-                              class="form-control"
-                              id="subject"
-                              placeholder="Message subject"
-                              required
-                           />
-                        </div>
-                        <div class="form-group">
-                           <label for="message" class="form-label"
-                              >Message</label
-                           >
-                           <textarea
-                              class="form-control"
-                              id="message"
-                              rows="5"
-                              placeholder="Your message here..."
-                              required
-                           ></textarea>
-                        </div>
-                        <div class="form-group text-center mt-4">
-                           <button type="submit" class="btn btn-primary btn-lg">
-                              Send Message
-                           </button>
-                        </div>
-                     </form>
-                  </div>
+            <div class="terms-section ftco-animate">
+               <h2><span class="section-number">1</span> Acceptance of Terms</h2>
+               <p><strong>Effective Date:</strong> 30 September 2025</p>
+               <p><strong>Entity Responsible:</strong> Incluvate, a brand of Abled Fitness Foundation</p>
+               <p>By accessing or using the Incluvate website, services, or programs ("Services"), you agree to be bound by these Terms and Conditions, as well as our Privacy Policy. If you do not agree, you should not use our Services.</p>
+               
+               <div class="highlight-box">
+                  <p><strong>Important:</strong> By using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</p>
                </div>
             </div>
-         </div>
-      </section>
 
-      <!-- Map Section -->
-      <section class="map-section">
-         <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-lg-10">
-                  <div class="map-card ftco-animate">
-                     <h2>Find Us</h2>
-                     <p>
-                        Visit Abled Fitness Foundation's center to learn more
-                        about Incluvate and our initiatives.
-                     </p>
-                     <div class="map-container">
-                        <iframe
-                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5198221621213!2d78.51359261031924!3d17.434816801368903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9ba076478abf%3A0x8a854cf02bd7bf7a!2s12-8-254%20Mettuguda!5e0!3m2!1sen!2sin!4v1756215656517!5m2!1sen!2sin"
-                           allowfullscreen=""
-                           loading="lazy"
-                           referrerpolicy="no-referrer-when-downgrade"
-                        ></iframe>
-                     </div>
-                  </div>
+            <div class="terms-section ftco-animate">
+               <h2><span class="section-number">2</span> About Us</h2>
+               <p>Incluvate is a brand of Abled Fitness Foundation, a registered company under the laws of India. All references to "we," "our," or "us" in these Terms refer to Abled Fitness Foundation operating through the Incluvate brand.</p>
+            </div>
+
+            <div class="terms-section ftco-animate">
+               <h2><span class="section-number">3</span> Use of Services</h2>
+               <p>When using our Services, you agree to the following:</p>
+               
+               <h3>Lawful Use</h3>
+               <p>You agree to use our website and Services only for lawful purposes.</p>
+               
+               <h3>Prohibited Activities</h3>
+               <p>You must not misuse our Services by:</p>
+               <ul>
+                  <li>Introducing harmful code, viruses, or malicious software</li>
+                  <li>Attempting unauthorized access to our systems or data</li>
+                  <li>Interfering with website functionality or performance</li>
+                  <li>Engaging in any activity that could damage, disable, or impair our Services</li>
+               </ul>
+               
+               <h3>Registration and Information</h3>
+               <p>Certain parts of the Services may require registration or the provision of accurate personal information. You agree to provide true and complete details when required.</p>
+            </div>
+
+            <div class="terms-section ftco-animate">
+               <h2><span class="section-number">4</span> Intellectual Property Rights</h2>
+               
+               <h3>Ownership</h3>
+               <p>All content on this website (logos, text, graphics, training materials, etc.) belongs to Abled Fitness Foundation and is protected by copyright, trademark, and other intellectual property laws.</p>
+               
+               <h3>Restrictions</h3>
+               <p>You may not copy, reproduce, or distribute our content without prior written consent.</p>
+               
+               <h3>User Contributions</h3>
+               <p>If you contribute content (e.g., testimonials, stories), you grant us a non-exclusive license to use it for advocacy and program-related purposes.</p>
+               
+               <div class="warning-box">
+                  <p><strong>Notice:</strong> Unauthorized use of our intellectual property may result in legal action.</p>
                </div>
             </div>
+
+            <div class="terms-section ftco-animate">
+               <h2><span class="section-number">5</span> Program Participation & Third-Party Links</h2>
+               
+               <h3>No Guarantees</h3>
+               <p>Incluvate may connect individuals with employers, trainers, or partners. We do not guarantee employment, training outcomes, or third-party services.</p>
+               
+               <h3>External Links</h3>
+               <p>Links to third-party websites are provided for convenience; we are not responsible for their content or practices.</p>
+               
+               <div class="highlight-box">
+                  <p><strong>Important:</strong> When you leave our website to visit third-party sites, their own terms and conditions and privacy policies will apply.</p>
+               </div>
+            </div>
+
+            <div class="terms-section ftco-animate">
+               <h2><span class="section-number">6</span> Limitation of Liability</h2>
+               
+               <p>Incluvate and Abled Fitness Foundation are not liable for any direct, indirect, or incidental damages arising from use of our website or Services.</p>
+               
+               <p>We make reasonable efforts to ensure accuracy of information, but do not guarantee completeness, reliability, or uninterrupted access.</p>
+               
+               <div class="warning-box">
+                  <p><strong>Disclaimer:</strong> Our Services are provided "as is" without warranties of any kind, either express or implied.</p>
+               </div>
+            </div>
+
+            <div class="terms-section ftco-animate">
+               <h2><span class="section-number">7</span> Indemnity</h2>
+               
+               <p>You agree to indemnify and hold harmless Incluvate and Abled Fitness Foundation, including its directors, employees, and partners, against any claims, losses, or damages resulting from your use of our Services or violation of these Terms.</p>
+            </div>
+
+            <div class="terms-section ftco-animate">
+               <h2><span class="section-number">8</span> Privacy & Data Protection</h2>
+               
+               <p>Your use of the Services is also governed by our Privacy Policy, which explains how we collect, process, and safeguard personal data.</p>
+               
+               <p>By using our Services, you consent to the collection and use of your information as described in our Privacy Policy.</p>
+            </div>
+
+            <div class="terms-section ftco-animate">
+               <h2><span class="section-number">9</span> Termination of Access</h2>
+               
+               <p>We reserve the right to suspend or terminate your access to the website or Services at our sole discretion, without notice, if you violate these Terms.</p>
+            </div>
+
+            <div class="terms-section ftco-animate">
+               <h2><span class="section-number">10</span> Governing Law & Jurisdiction</h2>
+               
+               <p>These Terms shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts located in Hyderabad, Telangana.</p>
+            </div>
+
+            <div class="terms-section ftco-animate">
+               <h2><span class="section-number">11</span> Changes to These Terms</h2>
+               
+               <p>We may update or modify these Terms at any time. The revised version will be posted on this page with an updated "Effective Date." Continued use of our Services means you accept the changes.</p>
+               
+               <div class="highlight-box">
+                  <p><strong>Notice:</strong> We encourage you to review these Terms periodically to stay informed about any updates.</p>
+               </div>
+            </div>
+
+            <div class="contact-info ftco-animate">
+               <h3>Contact Us</h3>
+               <p>For questions or concerns about these Terms and Conditions, please contact:</p>
+               <p><strong>Incluvate – A brand of Abled Fitness Foundation</strong></p>
+               <p>Registered Office: 12-8-160 Mettuguda, Secunderabad, Hyderabad - 500017</p>
+               <p>Email: <a href="mailto:abledfitnessfoundation@gmail.com" style="color: white;">abledfitnessfoundation@gmail.com</a></p>
+               <p>Phone: +91 8686043733</p>
+            </div>
+
+            <p class="last-updated">Last updated: September 30, 2025</p>
          </div>
       </section>
 
@@ -659,7 +599,7 @@
                      >Privacy Policy</a
                   >
                   <a
-                     href="terms-of-condition.html"
+                     href="terms-of-conditions.html"
                      style="
                         color: #6b7280;
                         font-size: 0.875rem;

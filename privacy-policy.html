@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Contact Us - Incluvate</title>
-      <meta charset="utf-8" />
-      <meta
-         name="viewport"
-         content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Privacy Policy - Incluvate</title>
+      <link rel="icon" type="image/png" href="./assets/images/logo/flogo.png" />
 
       <link
          href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700"
@@ -40,149 +38,99 @@
       <link rel="stylesheet" href="css/style.css" />
 
       <style>
-         /* Custom styles for the contact page */
-         .contact-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-               url("images/bg_7.jpg");
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0;
+         /* Custom styles for the Privacy Policy page */
+         .privacy-hero {
+            background-color: #2718ff;
             color: white;
+            padding: 100px 0 60px;
             text-align: center;
          }
-
-         .contact-info-section {
+         
+         .privacy-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+         }
+         
+         .privacy-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+         }
+         
+         .privacy-content {
             padding: 80px 0;
             background-color: #f8f9fa;
          }
-
-         .contact-card {
+         
+         .privacy-section {
             background: white;
             border-radius: 10px;
-            padding: 40px 30px;
+            padding: 40px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            height: 100%;
-            transition: transform 0.3s ease;
+            margin-bottom: 30px;
          }
-
-         .contact-card:hover {
-            transform: translateY(-5px);
+         
+         .privacy-section h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            font-weight: 600;
          }
-
-         .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: block;
+         
+         .privacy-section h3 {
             color: #2718ff;
-         }
-
-         .contact-card h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
+            margin: 25px 0 15px;
             font-weight: 600;
          }
-
-         .contact-card p {
+         
+         .privacy-section p, .privacy-section li {
             color: #6c757d;
-            line-height: 1.6;
+            line-height: 1.7;
+            margin-bottom: 15px;
          }
-
-         .contact-form-section {
-            padding: 80px 0;
+         
+         .privacy-section ul {
+            padding-left: 20px;
          }
-
-         .form-container {
-            background: white;
+         
+         .privacy-section li {
+            margin-bottom: 10px;
+         }
+         
+         .highlight-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #2718ff;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+         }
+         
+         .contact-info {
+            background-color: #2718ff;
+            color: white;
+            padding: 30px;
             border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 30px;
          }
-
-         .form-container h2 {
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-weight: 600;
-         }
-
-         .form-group {
+         
+         .contact-info h3 {
+            color: white;
             margin-bottom: 20px;
          }
-
-         .form-control {
-            border-radius: 8px;
-            padding: 12px 15px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
+         
+         .contact-info p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 10px;
          }
-
-         .form-control:focus {
-            border-color: #2718ff;
-            box-shadow: 0 0 0 2px rgba(39, 24, 255, 0.1);
-         }
-
-         .btn-primary {
-            background-color: #2718ff;
-            border-color: #2718ff;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-         }
-
-         .btn-primary:hover {
-            background-color: #1a0fb3;
-            border-color: #1a0fb3;
-            transform: translateY(-2px);
-         }
-
-         .map-section {
-            padding: 0 0 80px 0;
-         }
-
-         .map-card {
-            background: white;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-         }
-
-         .map-card h2 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-weight: 600;
-         }
-
-         .map-card p {
+         
+         .last-updated {
+            text-align: center;
             color: #6c757d;
-            margin-bottom: 30px;
-         }
-
-         .map-container {
-            border-radius: 8px;
-            overflow: hidden;
-            height: 400px;
-         }
-
-         .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-         }
-
-         @media (max-width: 768px) {
-            .contact-hero {
-               padding: 60px 0;
-            }
-
-            .contact-info-section,
-            .contact-form-section {
-               padding: 60px 0;
-            }
-
-            .form-container {
-               padding: 30px 20px;
-            }
+            font-style: italic;
+            margin-top: 40px;
          }
       </style>
    </head>
@@ -227,7 +175,7 @@
                   <li class="nav-item">
                      <a href="gallery.html" class="nav-link">Gallery</a>
                   </li>
-                  <li class="nav-item active">
+                  <li class="nav-item">
                      <a href="contact.html" class="nav-link">Contact</a>
                   </li>
                </ul>
@@ -236,171 +184,146 @@
       </nav>
       <!-- END nav -->
 
-      <!-- Hero Section -->
-      <div class="contact-hero">
+      <!-- Privacy Policy Hero Section -->
+      <section class="privacy-hero">
          <div class="container">
-            <div class="row align-items-center justify-content-center">
-               <div class="col-md-8 ftco-animate text-center">
-                  <h1 class="mb-4" style="color: #ffffff">Get In Touch</h1>
-                  <p class="mb-0">
-                     We'd love to hear from you. Send us a message and we'll
-                     respond as soon as possible.
-                  </p>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <!-- Contact Information Section -->
-      <section class="contact-info-section">
-         <div class="container">
-            <div class="row justify-content-center mb-5">
-               <div class="col-md-8 text-center">
-                  <h2 class="mb-4">Contact Information</h2>
-                  <p>
-                     Feel free to reach out to us through any of the following
-                     channels
-                  </p>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-4 mb-4 ftco-animate">
-                  <div class="contact-card">
-                     <i class="fas fa-map-marker-alt contact-icon"></i>
-                     <h3>Our Address</h3>
-                     <p>12-8-160 Mettuguda, Secunderabad, Hyderabad - 500017</p>
-                  </div>
-               </div>
-               <div class="col-md-4 mb-4 ftco-animate">
-                  <div class="contact-card">
-                     <i class="fas fa-envelope contact-icon"></i>
-                     <h3>Email Us</h3>
-                     <p>
-                        <a href="mailto:abledfitnessfoundation@gmail.com"
-                           >abledfitnessfoundation@gmail.com</a
-                        >
-                     </p>
-                  </div>
-               </div>
-               <div class="col-md-4 mb-4 ftco-animate">
-                  <div class="contact-card">
-                     <i class="fas fa-phone-alt contact-icon"></i>
-                     <h3>Call Us</h3>
-                     <p><a href="tel:+918686043733">+91 8686043733</a></p>
-                  </div>
-               </div>
-            </div>
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. Learn how we collect, use, and protect your information.</p>
          </div>
       </section>
 
-      <!-- Contact Form Section -->
-      <section class="contact-form-section">
+      <!-- Privacy Policy Content -->
+      <section class="privacy-content">
          <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-lg-10">
-                  <div class="form-container ftco-animate">
-                     <h2 class="text-center mb-5">Send Us a Message</h2>
-                     <form action="#" method="POST">
-                        <div class="row">
-                           <div class="col-md-6">
-                              <div class="form-group">
-                                 <label for="first-name" class="form-label"
-                                    >First Name</label
-                                 >
-                                 <input
-                                    type="text"
-                                    class="form-control"
-                                    id="first-name"
-                                    placeholder="Your first name"
-                                    required
-                                 />
-                              </div>
-                           </div>
-                           <div class="col-md-6">
-                              <div class="form-group">
-                                 <label for="last-name" class="form-label"
-                                    >Last Name</label
-                                 >
-                                 <input
-                                    type="text"
-                                    class="form-control"
-                                    id="last-name"
-                                    placeholder="Your last name"
-                                    required
-                                 />
-                              </div>
-                           </div>
-                        </div>
-                        <div class="form-group">
-                           <label for="email" class="form-label"
-                              >Email Address</label
-                           >
-                           <input
-                              type="email"
-                              class="form-control"
-                              id="email"
-                              placeholder="Your email address"
-                              required
-                           />
-                        </div>
-                        <div class="form-group">
-                           <label for="subject" class="form-label"
-                              >Subject</label
-                           >
-                           <input
-                              type="text"
-                              class="form-control"
-                              id="subject"
-                              placeholder="Message subject"
-                              required
-                           />
-                        </div>
-                        <div class="form-group">
-                           <label for="message" class="form-label"
-                              >Message</label
-                           >
-                           <textarea
-                              class="form-control"
-                              id="message"
-                              rows="5"
-                              placeholder="Your message here..."
-                              required
-                           ></textarea>
-                        </div>
-                        <div class="form-group text-center mt-4">
-                           <button type="submit" class="btn btn-primary btn-lg">
-                              Send Message
-                           </button>
-                        </div>
-                     </form>
-                  </div>
-               </div>
+            <div class="privacy-section ftco-animate">
+               <h2>Introduction</h2>
+               <p><strong>Effective Date:</strong> 30 September 2025</p>
+               <p><strong>Entity Responsible:</strong> Incluvate, a brand of Abled Fitness Foundation</p>
+               <p>Incluvate ("we," "our," or "us") is a brand of Abled Fitness Foundation, a registered company in India. This Privacy Policy explains how we collect, use, disclose, and protect personal information of individuals who visit our website, participate in our programs, or engage with our services.</p>
+               <p>By using our website or services, you agree to the terms of this Privacy Policy.</p>
             </div>
-         </div>
-      </section>
 
-      <!-- Map Section -->
-      <section class="map-section">
-         <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-lg-10">
-                  <div class="map-card ftco-animate">
-                     <h2>Find Us</h2>
-                     <p>
-                        Visit Abled Fitness Foundation's center to learn more
-                        about Incluvate and our initiatives.
-                     </p>
-                     <div class="map-container">
-                        <iframe
-                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5198221621213!2d78.51359261031924!3d17.434816801368903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9ba076478abf%3A0x8a854cf02bd7bf7a!2s12-8-254%20Mettuguda!5e0!3m2!1sen!2sin!4v1756215656517!5m2!1sen!2sin"
-                           allowfullscreen=""
-                           loading="lazy"
-                           referrerpolicy="no-referrer-when-downgrade"
-                        ></iframe>
-                     </div>
-                  </div>
+            <div class="privacy-section ftco-animate">
+               <h2>Information We Collect</h2>
+               <p>We collect various types of information to provide and improve our services:</p>
+               
+               <h3>Personal Information</h3>
+               <p>This includes but is not limited to:</p>
+               <ul>
+                  <li>Name, email address, phone number, postal address</li>
+                  <li>Disability-related information (if voluntarily shared)</li>
+                  <li>Employment and education details</li>
+               </ul>
+               
+               <h3>Usage Data</h3>
+               <p>We automatically collect information when you interact with our website:</p>
+               <ul>
+                  <li>IP address, browser type, device details</li>
+                  <li>Pages visited and interactions with our website</li>
+               </ul>
+               
+               <h3>Cookies & Tracking Technologies</h3>
+               <p>We use cookies and similar technologies to improve user experience and analyze site performance.</p>
+               
+               <h3>Program/Service Data</h3>
+               <p>Information you share when applying for training, jobs, or support programs.</p>
+            </div>
+
+            <div class="privacy-section ftco-animate">
+               <h2>How We Use Your Information</h2>
+               <p>We use the information we collect for various purposes:</p>
+               <ul>
+                  <li>Delivering our services, training, and employment opportunities</li>
+                  <li>Communicating updates, resources, and event information</li>
+                  <li>Improving website performance and user experience</li>
+                  <li>Compliance with legal obligations and regulatory requirements</li>
+                  <li>Promoting advocacy, research, and social inclusion (using anonymized data only)</li>
+               </ul>
+            </div>
+
+            <div class="privacy-section ftco-animate">
+               <h2>Legal Basis for Processing (GDPR/Applicable Law)</h2>
+               <p>We process your personal information based on the following legal grounds:</p>
+               
+               <h3>Consent</h3>
+               <p>When you voluntarily provide personal information.</p>
+               
+               <h3>Contractual Necessity</h3>
+               <p>To provide requested services or opportunities.</p>
+               
+               <h3>Legitimate Interest</h3>
+               <p>To improve our offerings and advocacy work.</p>
+               
+               <h3>Legal Obligation</h3>
+               <p>For compliance with tax, employment, or regulatory laws.</p>
+            </div>
+
+            <div class="privacy-section ftco-animate">
+               <h2>Sharing of Information</h2>
+               <p>We may share your information in the following circumstances:</p>
+               
+               <h3>Service Providers & Partners</h3>
+               <p>For hosting, analytics, training, or placement opportunities.</p>
+               
+               <h3>Regulatory Authorities</h3>
+               <p>When legally required.</p>
+               
+               <h3>Affiliated Entities</h3>
+               <p>Abled Fitness Foundation may access all data collected by Incluvate.</p>
+               
+               <div class="highlight-box">
+                  <p><strong>Important:</strong> All partners are required to comply with confidentiality and data protection obligations.</p>
                </div>
             </div>
+
+            <div class="privacy-section ftco-animate">
+               <h2>Data Retention</h2>
+               <p>We retain personal information only as long as necessary to fulfill the purposes stated above or as required by law. After this period, data is securely deleted or anonymized.</p>
+            </div>
+
+            <div class="privacy-section ftco-animate">
+               <h2>Data Protection & Security</h2>
+               <p>We use technical and organizational safeguards to protect your personal data against unauthorized access, misuse, loss, or disclosure. However, no online system is 100% secure, and we cannot guarantee absolute protection.</p>
+            </div>
+
+            <div class="privacy-section ftco-animate">
+               <h2>Your Rights</h2>
+               <p>You have the following rights regarding your personal data:</p>
+               <ul>
+                  <li>Access, update, or correct your personal data</li>
+                  <li>Request deletion ("Right to be Forgotten")</li>
+                  <li>Restrict or object to processing</li>
+                  <li>Withdraw consent at any time</li>
+                  <li>File a complaint with a data protection authority</li>
+               </ul>
+               <p>To exercise these rights, contact us at <a href="mailto:contact@incluvate.org">contact@incluvate.org</a>.</p>
+            </div>
+
+            <div class="privacy-section ftco-animate">
+               <h2>Children's Privacy</h2>
+               <p>Our services are not directed to children under 16. We do not knowingly collect data from minors without parental/guardian consent.</p>
+            </div>
+
+            <div class="privacy-section ftco-animate">
+               <h2>International Data Transfers</h2>
+               <p>If data is transferred outside your country (e.g., for cloud hosting), we ensure appropriate safeguards, such as standard contractual clauses or equivalent legal measures.</p>
+            </div>
+
+            <div class="privacy-section ftco-animate">
+               <h2>Updates to This Policy</h2>
+               <p>We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised "Effective Date."</p>
+            </div>
+
+            <div class="contact-info ftco-animate">
+               <h3>Contact Us</h3>
+               <p>For questions or concerns about this Privacy Policy, please contact:</p>
+               <p><strong>Incluvate – A brand of Abled Fitness Foundation</strong></p>
+               <p>Registered Office: 12-8-160 Mettuguda, Secunderabad, Hyderabad - 500017</p>
+               <p>Email: <a href="mailto:abledfitnessfoundation@gmail.com" style="color: white;">abledfitnessfoundation@gmail.com</a></p>
+               <p>Phone: +91 8686043733</p>
+            </div>
+
+            <p class="last-updated">Last updated: September 30, 2025</p>
          </div>
       </section>
 
