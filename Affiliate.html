@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Program Guide for Section 8 Companies | INCLUVATE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony Neutrals -->
+    <!-- Application Structure Plan: The application is structured as a single-page guide with a sticky navigation bar for easy access to thematic sections. This design was chosen over a simple Q&A to provide a guided, user-friendly journey through complex topics. The flow is logical: starting with foundational legal rules (Core Compliance), moving to practical application (Financial Handling & Website Transparency), clarifying identity (Branding), and finally providing real-world context (Case Studies). This task-oriented flow helps users progressively build their understanding and find actionable information quickly. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Legal Regulations -> Goal: Inform -> Viz/Method: Interactive expanding cards for each law. Interaction: Click to reveal details. Justification: Breaks down dense legal text into manageable, user-selectable chunks, preventing overwhelm. Method: HTML/CSS/JS.
+        - Report Info: Accounting Process -> Goal: Organize -> Viz/Method: A step-by-step process diagram. Interaction: Hover or click to see details for each step. Justification: Simplifies a procedural task, making it easy to follow. Method: HTML/Tailwind Flexbox.
+        - Report Info: Website Disclosures -> Goal: Inform/Organize -> Viz/Method: Interactive checklist. Interaction: Clicking an item reveals example text and placement advice. Justification: Provides an actionable tool for users to ensure their own website is compliant. Method: HTML/CSS/JS.
+        - Report Info: Brand vs. NGO Name -> Goal: Clarify Relationship -> Viz/Method: Simple static diagram. Interaction: None. Justification: A clear, immediate visual explanation of the organizational structure. Method: HTML/Tailwind.
+        - No charts were used as the source information is qualitative and procedural, not quantitative. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F7F4;
+            color: #3C3C3C;
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #5E8B7E;
+            border-bottom-color: #5E8B7E;
+        }
+        .card {
+            background-color: #FFFFFF;
+            border: 1px solid #EAE7DC;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .card-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease;
+            padding: 0 1.5rem;
+        }
+        .card.open .card-content {
+            max-height: 1000px;
+            padding: 1rem 1.5rem 1.5rem;
+        }
+        .checklist-item-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease;
+            padding: 0 1rem;
+        }
+        .checklist-item.open .checklist-item-details {
+             max-height: 500px;
+             padding: 1rem;
+        }
+        .process-step {
+            border-color: #EAE7DC;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+        .process-step:hover {
+            border-color: #5E8B7E;
+            background-color: #FFFFFF;
+        }
+        .modal-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="navbar" class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-[#5E8B7E]">INCLUVATE</span>
+                    <span class="text-sm text-gray-500 ml-2 hidden sm:block">by Abled Fitness Foundation</span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#compliance" class="nav-link text-gray-600 font-medium pb-1">Core Compliance</a>
+                    <a href="#financial" class="nav-link text-gray-600 font-medium pb-1">Financial Handling</a>
+                    <a href="#transparency" class="nav-link text-gray-600 font-medium pb-1">Website Transparency</a>
+                    <a href="#branding" class="nav-link text-gray-600 font-medium pb-1">Branding</a>
+                    <a href="#examples" class="nav-link text-gray-600 font-medium pb-1">Case Studies</a>
+                </nav>
+                 <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-500 hover:text-[#5E8B7E] hover:bg-gray-100">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#compliance" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 mobile-nav-link">Core Compliance</a>
+            <a href="#financial" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 mobile-nav-link">Financial Handling</a>
+            <a href="#transparency" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 mobile-nav-link">Website Transparency</a>
+            <a href="#branding" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 mobile-nav-link">Branding</a>
+            <a href="#examples" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 mobile-nav-link">Case Studies</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <section id="hero" class="text-center mb-20">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-800">A Practical Guide to Affiliate Programs for Section 8 Companies</h1>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Navigating the legal, financial, and transparency requirements for your NGO's affiliate marketing initiatives in India.</p>
+        </section>
+
+        <div id="content-container">
+            <section id="compliance" class="mb-16 scroll-mt-24">
+                <h2 class="text-3xl font-bold mb-2 text-center">Core Compliance</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Understanding the legal framework is the first step. Affiliate income is permissible for a Section 8 company, but it must be handled correctly under these key regulations. Click on each card to learn more.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="card rounded-lg shadow-sm cursor-pointer">
+                        <div class="p-6 flex justify-between items-center">
+                            <h3 class="text-xl font-semibold text-[#5E8B7E]">Companies Act, 2013</h3>
+                            <span class="arrow text-2xl text-gray-400">↓</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="text-gray-700">The fundamental rule for a Section 8 company is that its profits cannot be distributed as dividends to its members. All income, including from affiliate programs, must be applied towards promoting its main objectives (e.g., charitable, social welfare, arts). The affiliate program itself should ideally align with or support these objectives.</p>
+                            <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                                <li><strong>Key Mandate:</strong> Re-invest all profits into the mission.</li>
+                                <li><strong>Board Resolution:</strong> It is advisable to pass a board resolution approving the initiation of the affiliate program as a fundraising activity.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card rounded-lg shadow-sm cursor-pointer">
+                        <div class="p-6 flex justify-between items-center">
+                            <h3 class="text-xl font-semibold text-[#5E8B7E]">Income Tax Act, 1961</h3>
+                            <span class="arrow text-2xl text-gray-400">↓</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="text-gray-700">Affiliate income is considered business income. If your NGO has 12A/12AA/12AB registration, this income can be exempt from tax, provided it's used for your charitable objects. However, specific rules apply:</p>
+                            <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                                <li><strong>85% Application Rule:</strong> At least 85% of total income (including affiliate income) must be applied to charitable purposes in India within the financial year.</li>
+                                <li><strong>Separate Books:</strong> If the affiliate program is substantial, it may be treated as a business undertaking. Maintaining separate books of accounts for this activity is a best practice to demonstrate compliance.</li>
+                                <li><strong>TDS:</strong> The affiliate network/company (e.g., Amazon) will likely deduct Tax at Source (TDS) before paying you. This can be claimed back when filing your income tax return if your income is exempt.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card rounded-lg shadow-sm cursor-pointer">
+                        <div class="p-6 flex justify-between items-center">
+                            <h3 class="text-xl font-semibold text-[#5E8B7E]">Foreign Contribution (Regulation) Act, 2010</h3>
+                            <span class="arrow text-2xl text-gray-400">↓</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="text-gray-700 font-semibold">This is a critical consideration.</p>
+                            <p class="text-gray-700 mt-2">If the affiliate partner is a foreign company (e.g., Amazon.com, not Amazon.in), the income might be classified as a 'foreign contribution'. This would require you to have an FCRA registration.</p>
+                            <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                                <li><strong>Recommendation:</strong> To avoid FCRA complications, it is strongly advised to partner only with Indian entities for affiliate programs (e.g., Amazon.in, Flipkart).</li>
+                                <li><strong>Consult an Expert:</strong> The definition of "foreign source" is broad. If you must partner with a foreign company, consult a legal expert specializing in FCRA before proceeding.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card rounded-lg shadow-sm cursor-pointer">
+                        <div class="p-6 flex justify-between items-center">
+                            <h3 class="text-xl font-semibold text-[#5E8B7E]">Goods and Services Tax (GST)</h3>
+                            <span class="arrow text-2xl text-gray-400">↓</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="text-gray-700">Affiliate marketing is a taxable service under GST. Your NGO will need to register for GST if your total gross revenue from all activities (including grants, donations, and affiliate income) exceeds the threshold limit (₹20 lakhs in most states, ₹10 lakhs in special category states).</p>
+                             <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                                <li><strong>Threshold Check:</strong> Continuously monitor your aggregate turnover to ensure timely GST registration.</li>
+                                <li><strong>Invoicing:</strong> If registered, you must issue proper tax invoices to the affiliate network for the commission earned.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="financial" class="mb-16 scroll-mt-24">
+                <h2 class="text-3xl font-bold mb-2 text-center">Financial Handling & Accounting</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Properly recording affiliate income is crucial for compliance and transparent financial reporting. Follow this clear, step-by-step process.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
+                    <div class="process-step w-full md:w-1/4 p-4 border-2 rounded-lg text-center">
+                        <div class="text-2xl font-bold text-[#5E8B7E] mb-2">1</div>
+                        <h4 class="font-semibold mb-1">Recognize Income</h4>
+                        <p class="text-sm text-gray-600">Record income when it's earned (accrual basis), not just when cash is received.</p>
+                    </div>
+                    <div class="text-2xl text-gray-300 mx-4 hidden md:block">→</div>
+                     <div class="text-2xl text-gray-300 my-2 md:hidden">↓</div>
+                    <div class="process-step w-full md:w-1/4 p-4 border-2 rounded-lg text-center">
+                        <div class="text-2xl font-bold text-[#5E8B7E] mb-2">2</div>
+                        <h4 class="font-semibold mb-1">Create Ledgers</h4>
+                        <p class="text-sm text-gray-600">In your books, create specific accounts: "Income from Affiliate Programs", "TDS Receivable", and "Affiliate Partner Receivable".</p>
+                    </div>
+                    <div class="text-2xl text-gray-300 mx-4 hidden md:block">→</div>
+                     <div class="text-2xl text-gray-300 my-2 md:hidden">↓</div>
+                    <div class="process-step w-full md:w-1/4 p-4 border-2 rounded-lg text-center">
+                        <div class="text-2xl font-bold text-[#5E8B7E] mb-2">3</div>
+                        <h4 class="font-semibold mb-1">Journal Entry</h4>
+                        <p class="text-sm text-gray-600">When income is reported by the partner:<br><strong>Debit:</strong> Affiliate Partner (Receivable) <br><strong>Credit:</strong> Income from Affiliate Prog.</p>
+                    </div>
+                     <div class="text-2xl text-gray-300 mx-4 hidden md:block">→</div>
+                      <div class="text-2xl text-gray-300 my-2 md:hidden">↓</div>
+                    <div class="process-step w-full md:w-1/4 p-4 border-2 rounded-lg text-center">
+                        <div class="text-2xl font-bold text-[#5E8B7E] mb-2">4</div>
+                        <h4 class="font-semibold mb-1">Reflect in Statements</h4>
+                        <p class="text-sm text-gray-600">Show it under "Other Income" or "Income from Fundraising Activities" in your Income & Expenditure Account.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="transparency" class="mb-16 scroll-mt-24">
+                <h2 class="text-3xl font-bold mb-2 text-center">Website Transparency & Disclosures</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Building trust is paramount. Your website must clearly and transparently communicate your affiliate relationships to your audience. Use this checklist to ensure you've covered all bases.</p>
+                <div class="space-y-4 max-w-3xl mx-auto">
+                    <div class="checklist-item bg-white border border-gray-200 rounded-lg">
+                        <div class="p-4 cursor-pointer flex justify-between items-center checklist-header">
+                            <span class="font-medium">1. Clear Affiliate Disclosure</span>
+                            <span class="arrow text-xl text-gray-400">↓</span>
+                        </div>
+                        <div class="checklist-item-details bg-gray-50 border-t border-gray-200 rounded-b-lg">
+                            <p class="text-sm text-gray-700">You must disclose that you may earn a commission from purchases made through your links. This should be clear and conspicuous.</p>
+                            <div class="mt-3 p-3 bg-yellow-50 border-l-4 border-yellow-300 text-yellow-800 text-xs rounded-r-lg">
+                                <strong>Example Placement:</strong> In the website footer, and near any affiliate link or on pages with multiple affiliate links (e.g., a "Resources" or "Shop" page).<br><br>
+                                <strong>Example Text:</strong> "INCLUVATE is a reader-supported initiative. When you buy through links on our site, we may earn an affiliate commission at no extra cost to you. These earnings help us fund our fitness programs for people with disabilities."
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item bg-white border border-gray-200 rounded-lg">
+                        <div class="p-4 cursor-pointer flex justify-between items-center checklist-header">
+                            <span class="font-medium">2. Dedicated Policy/Terms Page</span>
+                            <span class="arrow text-xl text-gray-400">↓</span>
+                        </div>
+                        <div class="checklist-item-details bg-gray-50 border-t border-gray-200 rounded-b-lg">
+                             <p class="text-sm text-gray-700">Create a dedicated page explaining your affiliate program in detail. This builds transparency and answers user questions proactively.</p>
+                            <div class="mt-3 p-3 bg-blue-50 border-l-4 border-blue-300 text-blue-800 text-xs rounded-r-lg">
+                                <strong>Content to Include:</strong> A list of your affiliate partners, a clear explanation of how the program works, and a reiteration that this is a fundraising method to support your mission. Link to this page from your main disclosure statement.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item bg-white border border-gray-200 rounded-lg">
+                        <div class="p-4 cursor-pointer flex justify-between items-center checklist-header">
+                            <span class="font-medium">3. Mission Connection</span>
+                            <span class="arrow text-xl text-gray-400">↓</span>
+                        </div>
+                        <div class="checklist-item-details bg-gray-50 border-t border-gray-200 rounded-b-lg">
+                             <p class="text-sm text-gray-700">Always tie the affiliate program back to your core mission. People are more likely to support you if they know *why* you're doing it.</p>
+                            <div class="mt-3 p-3 bg-green-50 border-l-4 border-green-300 text-green-800 text-xs rounded-r-lg">
+                                <strong>Example Placement:</strong> In your "About Us" section or on the affiliate policy page.<br><br>
+                                <strong>Example Text:</strong> "Our affiliate partnerships are carefully selected to align with our values. Every commission we earn is directly channeled into the Abled Fitness Foundation's work, helping us create more inclusive fitness opportunities."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="branding" class="mb-16 scroll-mt-24">
+                <h2 class="text-3xl font-bold mb-2 text-center">Branding: INCLUVATE & Abled Fitness Foundation</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">It's vital to be transparent about the relationship between your public-facing brand and your registered legal entity. This avoids confusion and builds credibility.</p>
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 max-w-2xl mx-auto">
+                    <div class="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-4 sm:gap-6">
+                        <div class="bg-[#5E8B7E] text-white font-bold p-4 rounded-lg w-full sm:w-auto">INCLUVATE</div>
+                        <div class="flex flex-col items-center">
+                            <span class="text-gray-500 text-sm">is an initiative by</span>
+                            <span class="text-3xl text-gray-400 my-2 sm:my-0 sm:mx-4">→</span>
+                        </div>
+                        <div class="border-2 border-dashed border-gray-300 p-4 rounded-lg w-full sm:w-auto">
+                            <div class="font-bold">Abled Fitness Foundation</div>
+                            <div class="text-xs text-gray-500">(Registered Section 8 Company)</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-sm text-gray-600">
+                        <h4 class="font-semibold mb-2">How to Disclose this on Your Website:</h4>
+                        <div class="p-3 bg-gray-50 border-l-4 border-gray-300 rounded-r-lg">
+                            <strong>In the Footer:</strong> "© 2025 INCLUVATE, an initiative of the Abled Fitness Foundation, a registered Section 8 non-profit organization."
+                            <br><br>
+                            <strong>On the "About Us" Page:</strong> Start with a clear statement like, "Welcome to INCLUVATE, the flagship initiative of the Abled Fitness Foundation. While INCLUVATE is the brand you'll see on our website and social media, all our work is legally and financially managed by the Abled Fitness Foundation, our registered non-profit entity."
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="examples" class="scroll-mt-24">
+                <h2 class="text-3xl font-bold mb-2 text-center">Platforms & Case Studies</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">While few Indian NGOs publicly detail their affiliate programs, many leverage common platforms. The key is to draw inspiration from international examples while strictly adhering to Indian law.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="font-semibold text-lg mb-3">Popular Affiliate Platforms in India</h3>
+                        <p class="text-sm text-gray-600 mb-4">These platforms are straightforward to join and manage, ensuring you partner with Indian entities and avoid FCRA issues.</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> <strong>Amazon Associates (India):</strong> The most popular choice, with a vast range of products.</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> <strong>Flipkart Affiliate:</strong> Another major e-commerce player in India.</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> <strong>Cuelinks / Admitad:</strong> Affiliate aggregators that give you access to multiple brands through one platform.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="font-semibold text-lg mb-3">Inspirational Model (International)</h3>
+                        <p class="text-sm text-gray-600 mb-4">International organizations often integrate affiliate-style programs seamlessly. Study their approach to transparency and mission integration.</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">➤</span> <div><strong>GreaterGood / The Hunger Site:</strong> These sites run e-commerce stores where a portion of the purchase price (from products they sell or via affiliate links) is donated to charity. They are masters at communicating the impact of every purchase.</div></li>
+                        </ul>
+                        <div class="mt-4 text-xs p-2 bg-red-50 border-l-4 border-red-300 text-red-800 rounded-r-lg">
+                            <strong>Important Disclaimer:</strong> These international examples operate under different legal and tax frameworks. Use them for inspiration on user experience and communication only, not as a legal guide for India.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 border-t border-gray-200 mt-16">
+        <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            <p>This guide is for informational purposes only and does not constitute legal or financial advice. Please consult with a qualified professional.</p>
+            <p class="mt-1">© 2025 INCLUVATE by Abled Fitness Foundation</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('open');
+                    const arrow = card.querySelector('.arrow');
+                    arrow.innerHTML = card.classList.contains('open') ? '↑' : '↓';
+                });
+            });
+
+            const checklistItems = document.querySelectorAll('.checklist-item');
+            checklistItems.forEach(item => {
+                const header = item.querySelector('.checklist-header');
+                header.addEventListener('click', () => {
+                    item.classList.toggle('open');
+                     const arrow = item.querySelector('.arrow');
+                    arrow.innerHTML = item.classList.contains('open') ? '↑' : '↓';
+                });
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const sections = document.querySelectorAll('section[id]');
+            const navbar = document.getElementById('navbar');
+
+            function smoothScroll(targetId) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = navbar.offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            }
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    smoothScroll(link.getAttribute('href'));
+                });
+            });
+
+            mobileNavLinks.forEach(link => {
+                 link.addEventListener('click', e => {
+                    e.preventDefault();
+                    smoothScroll(link.getAttribute('href'));
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - navbar.offsetHeight - 20;
+                    if (pageYOffset >= sectionTop) {
+                        current = '#' + section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
