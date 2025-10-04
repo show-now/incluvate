@@ -7634,9 +7634,9 @@ h1, h2, h3, h4, h5,
     border: 1px solid rgb(79 70 229 / var(--tw-text-opacity, 1));
     color: #fff; }
     .btn.btn-primary:hover {
-      border: 1px solid rgb(79 70 229 / var(--tw-text-opacity, 1));
+      border: 1px solid rgb(119, 112, 234);
       background: transparent !important;
-      color: rgb(79 70 229 / var(--tw-text-opacity, 1)); }
+      color: rgb(232, 232, 232); }
     .btn.btn-primary.btn-outline-primary {
       border: 1px solid rgb(79 70 229 / var(--tw-text-opacity, 1));
       background: transparent;
